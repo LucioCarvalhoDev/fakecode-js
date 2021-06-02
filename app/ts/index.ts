@@ -3,5 +3,9 @@ import { int } from "./modules/basic/int.js";
 import { logic } from "./modules/basic/logic.js";
 import { createVar } from "./modules/createVar.js";
 import { primitiveValue } from "./modules/primitiveValue.js";
+import { register } from "./repo/register.js";
 
-console.log(createVar())
+console.log("====")//divider
+// createVar();
+// console.log(createVar())
+// console.log(register.global.vars)

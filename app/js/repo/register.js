@@ -3,7 +3,8 @@ export const register = {
         vars: {}
     },
     insertVar: function (data, scope = "global") {
-        this[scope].vars = {};
+        if (!this[scope])
+            this[scope].vars = {};
         this[scope].vars[data.name] = data.value;
     }
 };
