@@ -5,12 +5,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "concurrently": "^6.2.0",
     "typescript": "^4.3.2"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "ts": "npx tsc -w"
+    "test": "nodemon -q app/js/index.js",
+    "ts": "npx tsc -w",
+    "start": "concurrently \"npm run ts\" \"nodemon -q app/js/index.js\""
   },
   "repository": {
     "type": "git",
