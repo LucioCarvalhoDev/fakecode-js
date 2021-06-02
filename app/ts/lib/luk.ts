@@ -2,7 +2,7 @@ declare global {
     interface Array<T> {
         last(): T;
         getRandom(): T;
-        pick(): any[] | T;
+        pick(): T[] | T;
         removeById(id: number): T[];
         exclude(terms: T[]): T[]
     }
