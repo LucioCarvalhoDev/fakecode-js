@@ -2,7 +2,7 @@ declare global {
     interface Array<T> {
         last(): T;
         getRandom(): T;
-        pick(): T[] | T;
+        pick(): T[];
         removeById(id: number): T[];
         exclude(terms: T[]): T[]
     }
@@ -21,17 +21,15 @@ Array.prototype.getRandom = function () {
 };
 
 Array.prototype.pick = function (times = 1) {
-    if (times == 1) return this.getRandom();
-    if (times > 1) {
-        let list = new Set();
 
-        for (; list.size < times;) {
-            let l = list.size;
-            list.add(this.getRandom());
-        }
+    let list = new Set();
 
-        return Array.from(list);
+    for (; list.size < times;) {
+        let l = list.size;
+        list.add(this.getRandom());
     }
+
+    return Array.from(list);
 };
 
 Array.prototype.removeById = function (id) {

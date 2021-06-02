@@ -5,16 +5,12 @@ Array.prototype.getRandom = function () {
     return this[Math.trunc(Math.random() * this.length)];
 };
 Array.prototype.pick = function (times = 1) {
-    if (times == 1)
-        return this.getRandom();
-    if (times > 1) {
-        let list = new Set();
-        for (; list.size < times;) {
-            let l = list.size;
-            list.add(this.getRandom());
-        }
-        return Array.from(list);
+    let list = new Set();
+    for (; list.size < times;) {
+        let l = list.size;
+        list.add(this.getRandom());
     }
+    return Array.from(list);
 };
 Array.prototype.removeById = function (id) {
     this.splice(id, 1);
