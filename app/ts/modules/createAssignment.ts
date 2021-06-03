@@ -11,7 +11,7 @@ export const createAssignment = function () {
     res.push("=");
 
     //segundo termo;
-    res.push(Math.chance(0.4) ? primitiveValue() : createOperation());
+    res.push((Math.chance(0.4) ? primitiveValue() : createOperation()) + ";");
 
     return res.join(" ");
 }

@@ -14,7 +14,7 @@ export const createOperation = function () {
     //adiciona operador e operando n vezes
     do {
         res.push(operator());
-        res.push(Math.chance(0.4) ? (primitiveValue() || false) : vars.pick()[0]);
+        res.push(Math.chance(0.4) ? primitiveValue() : vars.pick()[0]);
 
         end = Math.chance(0.55) ? true : false;
     } while (!end)

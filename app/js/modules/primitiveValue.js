@@ -19,7 +19,7 @@ export const primitiveValue = function (type) {
             res = int(4294967296);
             break;
         case "falsy":
-            res = [undefined, null, NaN].pick()[0];
+            res = [null, NaN].pick()[0];
             break;
         default:
             res = primitiveValue(types.pick()[0]);

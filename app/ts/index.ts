@@ -12,10 +12,10 @@ console.log("====")//divider
 createVar();
 createVar();
 // createOperation();
-console.log(createOperation())
+// console.log(createOperation())
 // createVar();
 // console.log(primitiveValue())
 // console.log(createVar())
 // console.log(createCondicional())
-// console.log(createAssignment())
+console.log(createAssignment())
 // console.log(register.global.vars)
