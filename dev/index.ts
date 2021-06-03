@@ -12,13 +12,10 @@ export const fakeJS = function (): string {
         i++;
     } while (Math.chance(1 - i / 9))
 
-
     return res.join(`
 `)
 }
-
 const step = function (n: number): string {
-
     if (n === 0) {
         return createVar();
     } else if (n < 2 && Math.chance(0.8 - n / 5)) {
@@ -27,5 +24,3 @@ const step = function (n: number): string {
         return Math.chance(0.5) ? createAssignment() : createCondicional();
     }
 }
-
-console.log(fakeJS())

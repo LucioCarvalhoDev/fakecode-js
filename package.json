@@ -3,23 +3,26 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "dependencies": {
-    "concurrently": "^6.2.0",
+    "concurrently": "^6.2.0"
+  },
+  "devDependencies": {
     "typescript": "^4.3.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "nodemon -q app/js/index.js",
-    "ts": "npx tsc -w",
-    "start": "concurrently \"npm run ts\" \"nodemon -q app/js/index.js\""
+    "ts": "npx tsc -w"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LucioCarvalhoDev/js-code-generator.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "lorem-ipsum",
+    "JavaScript"
+  ],
+  "author": "Lucio Carvalho Almeida",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LucioCarvalhoDev/js-code-generator/issues"
