@@ -24,3 +24,12 @@ Qual desses componentes será gerado é decidido de forma probabilística com ba
 ### Conceitos principais
 * **register -** Componente responsavel por registrar cada variável criada e fornece-las para uso futuro;
 * **lexicon -** Forcenece uma lista de tokens para as declarações de variaveis. Alterando esse arquivo é possivel adicionar seus próprios nomes;
+
+<hr>
+
+## Adições futuras
+* variaveis com escopo;
+* funções;
+* suporte para const e let;
+* loop for;
+* objetos;
