@@ -1,5 +1,5 @@
 {
-  "name": "lorem-js",
+  "name": "fakecode-js",
   "type": "module",
   "version": "1.0.0",
   "description": "",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LucioCarvalhoDev/lorem-js.git"
+    "url": "git+https://github.com/LucioCarvalhoDev/fakecode-js.git"
   },
   "keywords": [
     "lorem-ipsum",
