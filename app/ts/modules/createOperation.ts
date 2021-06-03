@@ -1,4 +1,5 @@
 import { register } from "../repo/register.js";
+import { primitiveValue } from "./primitiveValue.js";
 
 export const createOperation = function () {
 
@@ -13,7 +14,8 @@ export const createOperation = function () {
     //adiciona operador e operando n vezes
     do {
         res.push(operator());
-        res.push(selectVar(vars));
+        res.push(Math.chance(0.4) ? (primitiveValue() || false) : vars.pick()[0]);
+
         end = Math.chance(0.55) ? true : false;
     } while (!end)
 
@@ -22,7 +24,6 @@ export const createOperation = function () {
 
 function selectVar(arr: any[]) {
     let selected = arr.pick()[0];
-    arr = arr.exclude([selected]);
     return selected;
 }
 
