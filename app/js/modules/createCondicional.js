@@ -1,13 +1,24 @@
 import { register } from "../repo/register.js";
 import { logic } from "./basic/logic.js";
+import { createAssignment } from "./createAssignment.js";
 import { primitiveValue } from "./primitiveValue.js";
 export const createCondicional = function () {
     const res = [];
+    let end = false;
     let header;
-    let main;
+    let main = [];
     let footer = "}";
     header = `if (${comparation()}) {`;
     res.push(header);
+    do {
+        let line = "    ";
+        line += createAssignment();
+        main.push(line);
+        end = Math.chance(0.4) ? true : false;
+    } while (!end);
+    res.push(main.join(`
+`));
+    res.push(footer);
     return res.join(`
 `);
 };

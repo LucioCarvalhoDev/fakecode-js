@@ -11,5 +11,8 @@ export const register = {
         if (!this[scope]) this[scope].vars = {};
 
         this[scope].vars[data.name] = data.value;
+    },
+    getVar: function (scope: string = "global") {
+        return Object.keys(this[scope].vars).pick()[0] || false;
     }
 }
