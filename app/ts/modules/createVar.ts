@@ -1,6 +1,7 @@
 import "../lib/luk.js";
 import { lexicon } from "../repo/lexicon.js";
 import { register } from "../repo/register.js";
+import { createOperation } from "./createOperation.js";
 import { primitiveValue } from "./primitiveValue.js";
 
 type varDefinition = { name: string, value: any }
@@ -24,7 +25,11 @@ export const createVar = function () {
     result.push("=")
 
     // ultimo termo
-    data.value = primitiveValue();
+    if (Math.chance(0.5)) {
+        data.value = primitiveValue();
+    } else {
+        data.value = createOperation();
+    }
     result.push(data.value + ";")
 
     register.insertVar(data);

@@ -9,11 +9,8 @@ import { register } from "./repo/register.js";
 console.log("====")//divider
 createVar();
 createVar();
-createVar();
-createVar();
-createVar();
 // createOperation();
-console.log(createOperation())
+// console.log(createOperation())
 // createVar();
-// console.log(createVar())
+console.log(createVar())
 // console.log(register.global.vars)

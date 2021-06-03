@@ -14,7 +14,7 @@ export const createOperation = function () {
     do {
         res.push(operator());
         res.push(selectVar(vars));
-        end = Math.chance(0.4) ? true : false;
+        end = Math.chance(0.55) ? true : false;
     } while (!end)
 
     return res.join(" ");
