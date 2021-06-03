@@ -4,9 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
-  "dependencies": {
-    "concurrently": "^6.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "typescript": "^4.3.2"
   },
