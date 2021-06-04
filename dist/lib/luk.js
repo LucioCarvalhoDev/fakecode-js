@@ -24,6 +24,9 @@ Array.prototype.exclude = function (terms) {
 Math.chance = function (number) {
     return Math.random() <= number;
 };
+Math.between = function (min, max) {
+    return Math.trunc(Math.random() * (max - min) + min);
+};
 export class Stack {
     constructor(config = { size: 3, garbage: false }) {
         this._items = [];

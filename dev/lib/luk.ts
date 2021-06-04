@@ -9,6 +9,7 @@ declare global {
 
     interface Math {
         chance(n: number): boolean;
+        between(min: number, max: number): number;
     }
 }
 
@@ -46,6 +47,10 @@ Array.prototype.exclude = function (terms) {
 Math.chance = function (number) {
     return Math.random() <= number;
 };
+
+Math.between = function (min: number, max: number) {
+    return Math.trunc(Math.random() * (max - min) + min);
+}
 
 export class Stack<T> {
 

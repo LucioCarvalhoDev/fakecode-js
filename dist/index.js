@@ -1,4 +1,5 @@
 import "./lib/luk.js";
+import { str } from "./modules/basic/str.js";
 import { createAssignment } from "./modules/createAssignment.js";
 import { createCondicional } from "./modules/createCondicional.js";
 import { createVar } from "./modules/createVar.js";
@@ -23,3 +24,5 @@ const step = function (n) {
         return Math.chance(0.5) ? createAssignment() : createCondicional();
     }
 };
+console.log("====");
+console.log(str());
