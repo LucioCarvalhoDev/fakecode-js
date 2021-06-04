@@ -1,6 +1,7 @@
 import "./lib/luk.js";
 import { createAssignment } from "./modules/createAssignment.js";
 import { createCondicional } from "./modules/createCondicional.js";
+import { createOperation } from "./modules/createOperation.js";
 import { createVar } from "./modules/createVar.js";
 export const fakeCodeJs = function () {
     const res = [];
@@ -24,4 +25,4 @@ const step = function (n) {
     }
 };
 console.log("====");
-console.log(fakeCodeJs());
+console.log(createOperation());

@@ -4,9 +4,11 @@ import { register } from "../repo/register.js";
 import { createOperation } from "./createOperation.js";
 import { primitiveValue } from "./primitiveValue.js";
 
+import type { primitiveTypes } from "./primitiveValue.js";
+
 type varDefinition = { name: string, value: any }
 
-export const createVar = function () {
+export const createVar = function (type?: primitiveTypes) {
 
     const data: varDefinition = { name: undefined, value: undefined }
 
@@ -25,10 +27,14 @@ export const createVar = function () {
     result.push("=")
 
     // ultimo termo
-    if (Math.chance(0.5)) {
-        data.value = primitiveValue();
+    if (type) {
+        data.value = primitiveValue(type);
     } else {
-        data.value = createOperation();
+        if (Math.chance(0.5)) {
+            data.value = primitiveValue();
+        } else {
+            data.value = createOperation();
+        }
     }
     result.push(data.value + ";")
 

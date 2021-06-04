@@ -2,7 +2,7 @@ import "../lib/luk.js";
 import { int } from "./basic/int.js";
 import { str } from "./basic/str.js";
 
-type primitiveTypes = "falsy" | "bool" | "tinyint" | "int" | "bigint" | "str" | "any";
+export type primitiveTypes = "falsy" | "bool" | "tinyint" | "int" | "bigint" | "str" | "any";
 
 export const primitiveValue = function (type: primitiveTypes = "any") {
 

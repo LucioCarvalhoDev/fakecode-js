@@ -17,6 +17,7 @@ export const createOperation = function () {
         res.push(operator());
 
         if (Math.chance(0.5)) {
+
             res.push(register.getVar());
         } else {
             res.push("" + primitiveValue())
