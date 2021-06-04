@@ -9,7 +9,12 @@ export const createOperation = function () {
     res.push(value);
     do {
         res.push(operator());
-        res.push(register.getVar() || primitiveValue());
+        if (Math.chance(0.5)) {
+            res.push(register.getVar());
+        }
+        else {
+            res.push("" + primitiveValue());
+        }
         end = Math.chance(0.55) ? true : false;
     } while (!end);
     return res.join(" ");

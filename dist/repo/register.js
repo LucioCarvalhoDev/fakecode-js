@@ -8,6 +8,6 @@ export const register = {
         this[scope].vars[data.name] = data.value;
     },
     getVar: function (scope = "global") {
-        return Object.keys(this[scope].vars).pick()[0] || false;
+        return Object.keys(this[scope].vars).pick()[0];
     }
 };

@@ -3,7 +3,7 @@ import { int } from "./basic/int.js";
 
 type primitiveTypes = "falsy" | "bool" | "tinyint" | "int" | "bigint" | "any";
 
-export const primitiveValue: any = function (type: primitiveTypes | "any") {
+export const primitiveValue = function (type: primitiveTypes = "any") {
 
     const types: primitiveTypes[] = ["bool", "tinyint", "int", "bigint", "falsy"];
 
@@ -26,9 +26,6 @@ export const primitiveValue: any = function (type: primitiveTypes | "any") {
             break;
         case "falsy":
             res = [null, NaN].pick()[0];
-            break;
-        default:
-            res = primitiveValue(types.pick()[0]);
             break;
     }
 

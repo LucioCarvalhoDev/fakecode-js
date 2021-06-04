@@ -1,7 +1,9 @@
 import "./lib/luk.js";
 import { createAssignment } from "./modules/createAssignment.js";
 import { createCondicional } from "./modules/createCondicional.js";
+import { createOperation } from "./modules/createOperation.js";
 import { createVar } from "./modules/createVar.js";
+import { register } from "./repo/register.js";
 
 export const fakeJS = function (): string {
     const res: string[] = [];
@@ -24,3 +26,9 @@ const step = function (n: number): string {
         return Math.chance(0.5) ? createAssignment() : createCondicional();
     }
 }
+
+console.log("====")
+console.log(fakeJS())
+// createVar()
+// console.log(register.getVar())
+// console.log(createOperation())

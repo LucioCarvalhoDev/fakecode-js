@@ -28,7 +28,13 @@ function comparation() {
     res.push(firstTerm);
     let secondTerm = logic();
     res.push(secondTerm);
-    let thirdTerm = Math.chance(0.5) ? primitiveValue() : Object.keys(register.global.vars).pick()[0];
+    let thirdTerm;
+    if (Math.chance(0.5)) {
+        thirdTerm = register.getVar();
+    }
+    else {
+        thirdTerm = "" + primitiveValue();
+    }
     res.push(thirdTerm);
     return res.join(" ");
 }

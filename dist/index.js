@@ -23,3 +23,5 @@ const step = function (n) {
         return Math.chance(0.5) ? createAssignment() : createCondicional();
     }
 };
+console.log("====");
+console.log(fakeJS());
