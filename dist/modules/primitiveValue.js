@@ -1,7 +1,8 @@
 import "../lib/luk.js";
 import { int } from "./basic/int.js";
+import { str } from "./basic/str.js";
 export const primitiveValue = function (type = "any") {
-    const types = ["bool", "tinyint", "int", "bigint", "falsy"];
+    const types = ["bool", "tinyint", "int", "bigint", "falsy", "str"];
     if (type === "any")
         type = types.pick()[0];
     let res;
@@ -21,6 +22,8 @@ export const primitiveValue = function (type = "any") {
         case "falsy":
             res = [null, NaN].pick()[0];
             break;
+        case "str":
+            res = str();
     }
     return res;
 };

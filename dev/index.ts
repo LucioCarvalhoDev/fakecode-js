@@ -3,6 +3,7 @@ import { str } from "./modules/basic/str.js";
 import { createAssignment } from "./modules/createAssignment.js";
 import { createCondicional } from "./modules/createCondicional.js";
 import { createVar } from "./modules/createVar.js";
+import { register } from "./repo/register.js";
 
 export const fakeCodeJs = function (): string {
     const res: string[] = [];
@@ -27,8 +28,9 @@ const step = function (n: number): string {
 }
 
 console.log("====")
-// console.log(fakeCodeJs())
+console.log(fakeCodeJs())
 // createVar()
 // console.log(register.getVar())
 // console.log(createOperation())
-console.log(str())
+// console.log(str())
+// console.log(register)
