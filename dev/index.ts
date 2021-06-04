@@ -1,11 +1,9 @@
 import "./lib/luk.js";
 import { createAssignment } from "./modules/createAssignment.js";
 import { createCondicional } from "./modules/createCondicional.js";
-import { createOperation } from "./modules/createOperation.js";
 import { createVar } from "./modules/createVar.js";
-import { register } from "./repo/register.js";
 
-export const fakeJS = function (): string {
+export const fakeCodeJs = function (): string {
     const res: string[] = [];
     let i = 0;
 
@@ -27,8 +25,8 @@ const step = function (n: number): string {
     }
 }
 
-console.log("====")
-console.log(fakeJS())
+// console.log("====")
+// console.log(fakeCodeJs())
 // createVar()
 // console.log(register.getVar())
 // console.log(createOperation())

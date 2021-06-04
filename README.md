@@ -10,9 +10,9 @@ npm install fakecode-js
 ## Uso
 
 ```
-import { fakeJS } from "fakecode-js";
+import { fakeCodeJs } from "fakecode-js";
 
-fakeJS();
+fakeCodeJs();
 /* output: 
 var arr = 801738020;
 var n1 = arr / 809288364 - arr;
@@ -29,7 +29,7 @@ arr = n1 + n1; */
 
 ## Como funciona
 
-A função ```fakeJS``` usa a função ```step``` para criar um componente do codigo por vez. Cada componente pode ser uma declaração de variável, uma operação ou uma condicional contendo os anteriores.
+A função ```fakeCodeJs``` usa a função ```step``` para criar um componente do codigo por vez. Cada componente pode ser uma declaração de variável, uma operação ou uma condicional contendo os anteriores.
 
 Qual desses componentes será gerado é decidido de forma probabilística com base na quantidade de passos já realizados. Da mesma forma, quanto mais interações se passam maior a chance da geração do codigo acabar.
 
