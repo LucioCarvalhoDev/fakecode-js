@@ -1,4 +1,4 @@
-
+import { Var } from "../modules/basic/Var";
 
 export const register = {
     global: {
@@ -6,13 +6,16 @@ export const register = {
 
         }
     },
-    insertVar: function (data: { name: string, value: any }, scope: string = "global") {
+    insertVar: function (data: Var<any>, scope: string = "global") {
 
-        if (!this[scope]) this[scope].vars = {};
+        if (this[scope] != "global") this[scope].vars = {};
 
-        this[scope].vars[data.name] = data.value;
+        this[scope].vars[data.identifier] = data.value;
     },
     getVar: function (scope: string = "global") {
         return Object.keys(this[scope].vars).pick()[0];
+    },
+    listVars: function (scope: string = "global") {
+        return Object(this[scope].vars);
     }
 }

@@ -3,17 +3,16 @@ import { lexicon } from "../repo/lexicon.js";
 import { register } from "../repo/register.js";
 import { createOperation } from "./createOperation.js";
 import { primitiveValue } from "./primitiveValue.js";
+import { Var } from "./basic/Var.js";
 export const createVar = function (type) {
     const data = { name: undefined, value: undefined };
     const result = ["var"];
-    const usedNames = Object.keys(register.global.vars);
+    const usedNames = Object.keys(register.listVars());
     data.name = lexicon
         .names
         .vars
         .exclude(usedNames)
         .pick()[0];
-    result.push(data.name);
-    result.push("=");
     if (type) {
         data.value = primitiveValue(type);
     }
@@ -25,7 +24,7 @@ export const createVar = function (type) {
             data.value = createOperation();
         }
     }
-    result.push(data.value + ";");
-    register.insertVar(data);
-    return result.join(" ");
+    let newVar = new Var(data.name, data.value);
+    register.insertVar(newVar);
+    return `${['var', 'let'].getRandom()} ${newVar.identifier} = ${newVar.value};`;
 };

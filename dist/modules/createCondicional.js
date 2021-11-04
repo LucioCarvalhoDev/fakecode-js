@@ -24,7 +24,7 @@ export const createCondicional = function () {
 };
 function comparation() {
     const res = [];
-    let firstTerm = Object.keys(register.global.vars).pick()[0];
+    let firstTerm = Object.keys(register.listVars()).pick()[0];
     res.push(firstTerm);
     let secondTerm = logic();
     res.push(secondTerm);

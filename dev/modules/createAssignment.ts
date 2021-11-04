@@ -3,15 +3,15 @@ import { createOperation } from "./createOperation.js";
 import { primitiveValue } from "./primitiveValue.js";
 
 export const createAssignment = function () {
-    const res: string[] = [];
+    // const res: string[] = [];
 
     //primeiro termo
-    res.push(Object.keys(register.global.vars).pick()[0]);
-
-    res.push("=");
+    const firstTerm = (Object.keys(register.listVars()).pick()[0]);
 
     //segundo termo;
-    res.push((Math.chance(0.4) ? primitiveValue() : createOperation()) + ";");
+    const secondTerm = ((Math.chance(0.4) ? primitiveValue() : createOperation()));
 
-    return res.join(" ");
+    return `${firstTerm} = ${secondTerm};`
 }
+
+// 

@@ -29,10 +29,14 @@ const step = function (n: number): string {
 }
 
 console.log("====")
-// console.log(fakeCodeJs())
 // createVar()
 // console.log(register.getVar())
-console.log(createOperation())
+// console.log(createOperation())
 // console.log(str())
 // console.log(register)
 // console.log(createVar("str"))
+// console.log(register.listVars())
+console.log(fakeCodeJs())
+// console.log(register)
+
+// assssss
