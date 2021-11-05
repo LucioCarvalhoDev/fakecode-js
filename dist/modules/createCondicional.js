@@ -24,13 +24,13 @@ export const createCondicional = function () {
 };
 function comparation() {
     const res = [];
-    let firstTerm = Object.keys(register.listVars()).pick()[0];
+    let firstTerm = Object.keys(register.listVars()).getRandom();
     res.push(firstTerm);
     let secondTerm = logic();
     res.push(secondTerm);
     let thirdTerm;
     if (Math.chance(0.5)) {
-        thirdTerm = register.getVar();
+        thirdTerm = register.getVar().identifier;
     }
     else {
         thirdTerm = "" + primitiveValue();

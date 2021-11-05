@@ -11,6 +11,10 @@ declare global {
         chance(n: number): boolean;
         between(min: number, max: number): number;
     }
+
+    interface Object {
+        randomProp(): any
+    }
 }
 
 Array.prototype.last = function () {
@@ -43,6 +47,11 @@ Array.prototype.exclude = function (terms) {
         return terms.indexOf(value) == -1;
     });
 };
+
+Object.prototype.randomProp = function () {
+    var keys = Object.keys(this);
+    return this[keys[keys.length * Math.random() << 0]];
+}
 
 Math.chance = function (number) {
     return Math.random() <= number;

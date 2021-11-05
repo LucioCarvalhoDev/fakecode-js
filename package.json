@@ -4,7 +4,9 @@
   "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "query-objects": "^0.0.6"
+  },
   "devDependencies": {
     "typescript": "^4.3.2"
   },

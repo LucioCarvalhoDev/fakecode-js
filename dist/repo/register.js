@@ -3,14 +3,23 @@ export const register = {
         vars: {}
     },
     insertVar: function (data, scope = "global") {
-        if (this[scope] != "global")
-            this[scope].vars = {};
-        this[scope].vars[data.identifier] = data.value;
+        this[scope].vars[data.identifier] = data;
     },
     getVar: function (scope = "global") {
-        return Object.keys(this[scope].vars).pick()[0];
+        const prop = Object.keys(this[scope].vars).getRandom();
+        return this[scope].vars[prop];
+    },
+    getVarsByType: function (scope = "global", type) {
+        const unfilteredVariables = register.listVars(scope);
+        let variables = [];
+        for (let varName in unfilteredVariables) {
+            if (unfilteredVariables[varName].type == type)
+                variables.push(unfilteredVariables[varName]);
+        }
+        return variables;
     },
     listVars: function (scope = "global") {
         return Object(this[scope].vars);
     }
 };
+register.global.vars;

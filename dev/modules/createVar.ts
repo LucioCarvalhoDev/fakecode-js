@@ -9,11 +9,9 @@ import { Var } from "./basic/Var.js";
 
 type varDefinition = { name: string, value: any }
 
-export const createVar = function (type?: primitiveTypes) {
+export const createVar = function (type: primitiveTypes = 'any') {
 
     const data: varDefinition = { name: undefined, value: undefined }
-
-    const result: string[] = ["var"];
 
     // primeiro termo
     const usedNames = Object.keys(register.listVars());
@@ -21,23 +19,20 @@ export const createVar = function (type?: primitiveTypes) {
         .names
         .vars
         .exclude(usedNames)
-        .pick()[0];
+        .getRandom();
 
 
-    if (type) {
+
+    if (Math.chance(0.5)) {
         data.value = primitiveValue(type);
     } else {
-        if (Math.chance(0.5)) {
-            data.value = primitiveValue();
-        } else {
-            data.value = createOperation();
-        }
+        data.value = createOperation(type);
     }
+
 
     let newVar = new Var(data.name, data.value);
 
     register.insertVar(newVar);
     return `${['var', 'let'].getRandom()} ${newVar.identifier} = ${newVar.value};`
 }
-
-// sss
+// sssssss

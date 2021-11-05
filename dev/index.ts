@@ -1,5 +1,4 @@
 import "./lib/luk.js";
-import { str } from "./modules/basic/str.js";
 import { createAssignment } from "./modules/createAssignment.js";
 import { createCondicional } from "./modules/createCondicional.js";
 import { createOperation } from "./modules/createOperation.js";
@@ -29,14 +28,25 @@ const step = function (n: number): string {
 }
 
 console.log("====")
-// createVar()
+
 // console.log(register.getVar())
-// console.log(createOperation())
+// console.log(createVar())
+// console.log(createVar())
+// console.log(createAssignment())
 // console.log(str())
 // console.log(register)
-// console.log(createVar("str"))
 // console.log(register.listVars())
 console.log(fakeCodeJs())
-// console.log(register)
+// console.log(register.getVar())
 
-// assssss
+
+// console.log(createVar('string'))
+// console.log(createVar('string'))
+// // console.log(createAssignment())
+// // console.log(createOperation('any'))
+// console.log(createAssignment())
+
+
+
+
+// asdsjim

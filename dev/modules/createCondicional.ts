@@ -36,7 +36,7 @@ export const createCondicional = function () {
 function comparation(): string {
     const res: string[] = [];
 
-    let firstTerm = Object.keys(register.listVars()).pick()[0];
+    let firstTerm = Object.keys(register.listVars()).getRandom();
     res.push(firstTerm);
 
     let secondTerm = logic();
@@ -45,7 +45,7 @@ function comparation(): string {
     let thirdTerm: string;
 
     if (Math.chance(0.5)) {
-        thirdTerm = register.getVar();
+        thirdTerm = register.getVar().identifier;
     } else {
         thirdTerm = "" + primitiveValue();
     }
@@ -54,3 +54,5 @@ function comparation(): string {
 
     return res.join(" ")
 }
+
+// kj

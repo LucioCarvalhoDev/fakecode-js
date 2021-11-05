@@ -4,25 +4,19 @@ import { register } from "../repo/register.js";
 import { createOperation } from "./createOperation.js";
 import { primitiveValue } from "./primitiveValue.js";
 import { Var } from "./basic/Var.js";
-export const createVar = function (type) {
+export const createVar = function (type = 'any') {
     const data = { name: undefined, value: undefined };
-    const result = ["var"];
     const usedNames = Object.keys(register.listVars());
     data.name = lexicon
         .names
         .vars
         .exclude(usedNames)
-        .pick()[0];
-    if (type) {
+        .getRandom();
+    if (Math.chance(0.5)) {
         data.value = primitiveValue(type);
     }
     else {
-        if (Math.chance(0.5)) {
-            data.value = primitiveValue();
-        }
-        else {
-            data.value = createOperation();
-        }
+        data.value = createOperation(type);
     }
     let newVar = new Var(data.name, data.value);
     register.insertVar(newVar);

@@ -6,12 +6,12 @@ export const createAssignment = function () {
     // const res: string[] = [];
 
     //primeiro termo
-    const firstTerm = (Object.keys(register.listVars()).pick()[0]);
+    const variable = register.getVar();
 
     //segundo termo;
     const secondTerm = ((Math.chance(0.4) ? primitiveValue() : createOperation()));
 
-    return `${firstTerm} = ${secondTerm};`
+    return `${variable.identifier} = ${secondTerm};`
 }
 
 // 
