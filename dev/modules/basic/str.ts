@@ -1,3 +1,4 @@
+import Srand from "seeded-rand";
 import { lexicon } from "../../repo/lexicon.js";
 import { int } from "./int.js";
 import { Var } from "./Var.js";
@@ -13,7 +14,7 @@ export const str = function (len: number = Math.between(0, 6)) {
             res.push(String.fromCharCode(Math.between(97, 123)));
         }
     } else {
-        res.push('#' + Math.round(16777215 * Math.random()).toString(16))
+        res.push('#' + Math.round(16777215 * Srand.random()).toString(16))
     }
 
     res.push('"');

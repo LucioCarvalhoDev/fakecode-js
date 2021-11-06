@@ -1,3 +1,5 @@
+import Srand from "seeded-rand";
+
 declare global {
     interface Array<T> {
         last(): T;
@@ -22,7 +24,7 @@ Array.prototype.last = function () {
 };
 
 Array.prototype.getRandom = function () {
-    return this[Math.trunc(Math.random() * this.length)];
+    return this[Math.trunc(Srand.random() * this.length)];
 };
 
 Array.prototype.pick = function (times = 1) {
@@ -50,15 +52,15 @@ Array.prototype.exclude = function (terms) {
 
 Object.prototype.randomProp = function () {
     var keys = Object.keys(this);
-    return this[keys[keys.length * Math.random() << 0]];
+    return this[keys[keys.length * Srand.random() << 0]];
 }
 
 Math.chance = function (number) {
-    return Math.random() <= number;
+    return Srand.random() <= number;
 };
 
 Math.between = function (min: number, max: number) {
-    return Math.trunc(Math.random() * (max - min) + min);
+    return Math.trunc(Srand.random() * (max - min) + min);
 }
 
 export class Stack<T> {

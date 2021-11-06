@@ -5,7 +5,8 @@
   "description": "",
   "main": "dist/index.js",
   "dependencies": {
-    "query-objects": "^0.0.6"
+    "query-objects": "^0.0.6",
+    "seeded-rand": "^2.0.1"
   },
   "devDependencies": {
     "typescript": "^4.3.2"

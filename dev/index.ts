@@ -1,9 +1,13 @@
+import Srand from "seeded-rand";
 import "./lib/luk.js";
 import { createAssignment } from "./modules/createAssignment.js";
 import { createCondicional } from "./modules/createCondicional.js";
 import { createOperation } from "./modules/createOperation.js";
 import { createVar } from "./modules/createVar.js";
 import { register } from "./repo/register.js";
+
+const seed = Math.trunc(Math.random() * 100000);
+Srand.seed(seed)
 
 export const fakeCodeJs = function (): string {
     const res: string[] = [];
@@ -20,7 +24,7 @@ export const fakeCodeJs = function (): string {
 const step = function (n: number): string {
     if (n === 0) {
         return createVar();
-    } else if (n < 2 && Math.chance(0.8 - n / 5)) {
+    } else if (Math.chance(0.6 - n * 0.1)) {
         return createVar();
     } else {
         return Math.chance(0.5) ? createAssignment() : createCondicional();
@@ -28,25 +32,5 @@ const step = function (n: number): string {
 }
 
 console.log("====")
-
-// console.log(register.getVar())
-// console.log(createVar())
-// console.log(createVar())
-// console.log(createAssignment())
-// console.log(str())
-// console.log(register)
-// console.log(register.listVars())
+console.log(Srand._seed)
 console.log(fakeCodeJs())
-// console.log(register.getVar())
-
-
-// console.log(createVar('string'))
-// console.log(createVar('string'))
-// // console.log(createAssignment())
-// // console.log(createOperation('any'))
-// console.log(createAssignment())
-
-
-
-
-// asdsjim
